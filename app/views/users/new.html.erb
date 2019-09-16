@@ -1,3 +1,8 @@
+<% if @user.errors.any? %>
+	<% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+  <% end %>
+<% end %>
 <%= form_for(@user) do |f| %>
 		<div class="form-group">
 			<%= f.label :fullname, "Full Name" %>
@@ -8,4 +13,4 @@
 			<%= f.email_field :username, placeholder: "Choose Username", class: "form-control" %>
 		</div>
 			<%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block", title: "Submit" %>
-	<% end %>
+<% end %>

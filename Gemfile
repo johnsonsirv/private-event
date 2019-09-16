@@ -60,7 +60,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
 	gem 'webdrivers', '~> 4.0'
-	
+	gem 'shoulda-matchers'
 end
 
 group :production do

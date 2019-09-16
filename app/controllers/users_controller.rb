@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		@current_user = User.find_by(username: session[:username])
+		# @current_user = User.find_by(username: session[:username])
 	end
 	
 	
@@ -30,11 +30,7 @@ class UsersController < ApplicationController
 			params.require(:user).permit(:fullname, :username)
 		end
 	
-		def sign_in(user)
-			session[:username] = user.username
-		end
-
 		def require_login
-			redirect_to signup_path unless session[:username]
+			redirect_to signup_path unless current_user
 		end
 end
