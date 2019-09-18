@@ -1,4 +1,4 @@
-Feature: Register a new User
+Feature: Login as an existing User
 	In order to see a list of events I can attend
 	As a user
 	I want to log in with my username
