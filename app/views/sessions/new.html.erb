@@ -1,0 +1,10 @@
+<% unless flash.empty? %>
+	<div class="alert alert-danger">
+			<strong> <%= flash.now[:login_error] %> </strong>
+	</div>
+<% end %>
+<%= form_for(:session, url: login_path) do |f| %>
+		<%= f.label :username, "Username" %>
+    <%= f.text_field :username, class: 'form-control', placeholder: "Enter Username" %>
+ 		<%= f.submit "Login", class: "btn btn-primary btn-lg btn-block", title: "Login" %>
+<% end %>
