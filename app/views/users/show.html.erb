@@ -2,3 +2,13 @@
 	Welcome back, <span><%= current_user.username %></span>
 	<%= link_to "Logout", logout_path, class: "dropdown-item",  method: :delete %>
 </h2>
+
+<h5>Created Events</h5>
+<p>
+	<% @created_events.each do |e|%>
+		<%= e.name %>
+		<%= e.description %>
+		<%= e.location %>
+		<%= e.event_date %>
+	<% end %>
+</p>

@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		# @current_user = User.find_by(username: session[:username])
+		@created_events = current_user.created_events
 	end
 	
 	
