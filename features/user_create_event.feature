@@ -12,8 +12,8 @@ Scenario Outline: Create a username
 	And I fill in Description with <description>
 	And I fill in Location with <location>
 	And I fill in Event Date with <event_date>
-	And I click "Add Event"
-	Then I should see <text>
+	And I click the "Add Event" button
+	Then I should see the event <text>
 
 	Examples:
 		| name | description | location | event_date | text |

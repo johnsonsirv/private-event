@@ -25,10 +25,10 @@ When("I fill in Event Date with {string}") do |event_date|
   fill_in "Event Date", with: Date.parse(event_date)
 end
 
-When('I click {string}') do |button_name|
+When('I click the {string} button') do |button_name|
  click_button button_name
 end
 
-Then('I should see {string}') do |username|
+Then('I should see the event {string}') do |username|
   expect(page).to have_text username
 end
