@@ -4,6 +4,9 @@ class Event < ApplicationRecord
 	has_many :attendable_events, foreign_key: "event_attendee_id", dependent: :destroy
 	has_many :attendees, through: :attendable_events, source: :event_attendee
 	
-	
+	validates :name, presence: true
+	validates :description, presence: true
+	validates :location, presence: true
+	validates :event_date, presence: true
 	
 end
