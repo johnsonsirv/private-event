@@ -6,7 +6,7 @@ Feature: Create new Event
 Background:
 	Given I am logged in as "John Doe" and username "johnyd"
 	
-Scenario Outline: Create a username
+Scenario Outline: Create a new Event
 	When I follow New Event link
 	And I fill in Name with <name>
 	And I fill in Description with <description>

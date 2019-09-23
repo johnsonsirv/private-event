@@ -6,8 +6,10 @@ class EventsController < ApplicationController
 	
 	def create
 		event = current_user.created_events.build(events_param)
-		if event.save
-			flash[:message] = "Event created succesfuly"
+		event.save
+		events_attendable = AttendableEvent.new(attended_event: event, event_attendee: current_user)
+		if events_attendable.save
+			flash[:message] = "Event created successfuly"
 			redirect_to users_home_path
 		else
 			render :new
