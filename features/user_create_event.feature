@@ -4,17 +4,12 @@ Feature: Create new Event
 	I want to create a new event
 
 Background:
-	Given I am logged in as "John Doe" and username "johnyd"
+	Given the user "johnyd" has signed in
 	
 Scenario Outline: Create a new Event
-	When I follow New Event link
-	And I fill in Name with <name>
-	And I fill in Description with <description>
-	And I fill in Location with <location>
-	And I fill in Event Date with <event_date>
-	And I click the "Add Event" button
-	Then I should see the event <text>
+	When I submit event <name>,<description>,<location>,<event_date>
+	Then I should see my event <event>
 
 	Examples:
-		| name | description | location | event_date | text |
+		| name | description | location | event_date | event |
 		| "Karl's birthday" | "1 year birthday party of my son Karl" | "My residence" | "Sep 25 2019" | "Karl's birthday" |
