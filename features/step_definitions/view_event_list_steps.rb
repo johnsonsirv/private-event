@@ -1,4 +1,3 @@
-
 Given("the following events exist:") do |events|
 	user = User.create(fullname: "Dummmyname", username: "dummyuser")
   events.hashes.each do |e|
