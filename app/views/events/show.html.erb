@@ -3,3 +3,4 @@
 	<p> <%= @event_details.location %> </p>
 	<p> <%= @event_details.event_date %> </p>
 	<p>status: <%= @event_details.event_date < Date.today ? "Past" : "Upcoming" %></p>
+	<p>createdby: <%= @event_details.creator.username %> </p>

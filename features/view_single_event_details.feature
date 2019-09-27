@@ -15,4 +15,4 @@ Scenario: View event details
 	When I select the first event
 	Then I should see:
 	| name | description | location | creator |
-	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | "dummyuser" |
+	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | dummyuser |
