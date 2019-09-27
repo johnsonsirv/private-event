@@ -1,0 +1,7 @@
+<% @event_details.each do |e| %>
+	<p> <%= e.name %> </p>
+	<p> <%= e.description %> </p>
+	<p> <%= e.location %> </p>
+	<p> <%= e.event_date %> </p>
+	<p>status: <%= e.event_date < Date.today ? "Past" : "Upcoming" %></p>
+<% end %>

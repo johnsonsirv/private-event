@@ -7,10 +7,17 @@ Background:
 	Given the user "johnyd" has signed in
 	And the following events exist:
 	| name | description | location | event_date |
-	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | "Nov 26 2019" |
+	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | "Nov 26 2022" |
 	| "Karl's birthday" | "1 year birthday party" | "My residence" | "Sep 23 2019" |
 	
-Scenario: View list of Past events
+Scenario: View list of events
 	When I follow the events path
 	Then I should see "R-o-Rails meetup" and "Upcoming"
 	And also see "Karl's birthday" and "Past"
+	
+Scenario: View single event details
+	When I follow the events path
+	And I select the first event from the list
+	Then I should see:
+	| name | description | location | creator |
+	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | "dummyuser" |
