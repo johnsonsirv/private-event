@@ -14,10 +14,3 @@ Scenario: View list of events
 	When I follow the events path
 	Then I should see "R-o-Rails meetup" and "Upcoming"
 	And also see "Karl's birthday" and "Past"
-	
-Scenario: View single event details
-	When I follow the events path
-	And I select the first event from the list
-	Then I should see:
-	| name | description | location | creator |
-	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | "dummyuser" |

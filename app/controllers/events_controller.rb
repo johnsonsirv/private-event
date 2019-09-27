@@ -20,7 +20,7 @@ class EventsController < ApplicationController
 	end
 	
 	def show
-		@event_details = Event.find(id: params[:id])
+		@event_details = Event.find_by(id: params[:id])
 	end
 	
 	private

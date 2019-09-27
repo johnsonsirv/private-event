@@ -21,16 +21,3 @@ Then("also see {string} and {string}") do |event_2, status|
  	expect(page).to have_content event_2
 	expect(page).to have_content status
 end
-
-When("I select the first event from the list") do
-  visit event_path Event.first
-end
-
-Then("I should see:") do |table|
-	table.hashes.each do |e|
-		expect(page).to have_content e['name']
-		expect(page).to have_content e['description']
-		expect(page).to have_content e['location']
-		expect(page).to have_content e['creator']
-	end
-end
