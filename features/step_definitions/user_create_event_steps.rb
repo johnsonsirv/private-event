@@ -1,5 +1,5 @@
 Given("the user {string} has signed in") do |username|
-  User.create(fullname: "Full Name", username: username)
+	User.create(fullname: "Full Name", username: username)
 	visit login_path
 	fill_in "Username", with: username
 	click_button "Login"

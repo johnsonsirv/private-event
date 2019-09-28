@@ -30,7 +30,4 @@ class UsersController < ApplicationController
 			params.require(:user).permit(:fullname, :username)
 		end
 	
-		def require_login
-			redirect_to signup_path unless current_user
-		end
 end
