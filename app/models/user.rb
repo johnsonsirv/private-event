@@ -4,7 +4,7 @@ class User < ApplicationRecord
 	has_many :created_events, class_name: "Event", 
 						foreign_key: "creator_id", dependent: :destroy
 	
-	has_many :attendable_events, foreign_key: "attended_event_id", dependent: :destroy
+	has_many :attendable_events, foreign_key: "event_attendee_id", dependent: :destroy
 	has_many :attended_events, through: :attendable_events
 	
 	validates :fullname, presence: {message: "Enter your name or username" }, 
@@ -14,7 +14,10 @@ class User < ApplicationRecord
 											uniqueness: true
 	
 	
+	def is_already_attending?(event)
+	end
 	
+	private
 	def downcase_username
 		self.username = username.downcase
 	end

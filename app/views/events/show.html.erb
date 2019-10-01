@@ -4,3 +4,10 @@
 	<p> <%= @event_details.event_date %> </p>
 	<p>status: <%= @event_details.event_date < Date.today ? "Past" : "Upcoming" %></p>
 	<p>createdby: <%= @event_details.creator.username %> </p>
+	<% unless is_attending? @event_details %>
+		<%= button_to "Cancel Attendance", @event_details, remote: true,
+			class: "btn btn-primary btn-block", title: "Cancel Attendance" %>
+	<% else %>
+		<%= button_to "Attend this Event", @event_details, remote: true,
+		class: "btn btn-primary btn-block", title: "Attend this Event" %>
+	<% end %>
