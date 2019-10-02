@@ -25,6 +25,24 @@ class EventsController < ApplicationController
 		@event_details = Event.find_by(id: params[:id])
 	end
 	
+	def cancel_subscription
+		
+	end
+	
+		
+	def subscribe_to_event
+		# byebug
+		event = Event.find_by(id: params[:id])
+		events_attendable = AttendableEvent.
+				new(attended_event: event, event_attendee: current_user)
+		if events_attendable.save
+			flash[:message] = "New event added to list"
+			redirect_to users_home_path
+		else
+			redirect_to events_path
+		end
+	end
+	
 	private
 	def events_param
 			params.require(:event).permit(:name, :description, :location, :event_date)

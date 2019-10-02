@@ -4,10 +4,12 @@
 	<p> <%= @event_details.event_date %> </p>
 	<p>status: <%= @event_details.event_date < Date.today ? "Past" : "Upcoming" %></p>
 	<p>createdby: <%= @event_details.creator.username %> </p>
-	<% unless is_attending? @event_details %>
-		<%= button_to "Cancel Attendance", @event_details, remote: true,
+	<% if is_attending? @event_details %>
+		<%= button_to "Cancel Attendance", cancel_subscription_path, remote: true, method: :delete,
+			data: { params: "id=#{@event_details.id}", "disable-with": 'Canceling attendance...'},
 			class: "btn btn-primary btn-block", title: "Cancel Attendance" %>
 	<% else %>
-		<%= button_to "Attend this Event", @event_details, remote: true,
-		class: "btn btn-primary btn-block", title: "Attend this Event" %>
+			<%= button_to "Attend this Event", subscribe_to_event_path(id: @event_details.id), remote: true, 
+			data: { "disable-with": 'Please wait...'},
+			class: "btn btn-primary btn-block", title: "Attend this Event" %>
 	<% end %>
