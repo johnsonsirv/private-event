@@ -10,11 +10,9 @@ class EventsController < ApplicationController
 	end
 	
 	def create
-		event = current_user.created_events.build(events_param)
-		event.save
-		events_attendable = AttendableEvent.
-			new(attended_event: event, event_attendee: current_user)
-		if events_attendable.save
+		@event = current_user.created_events.new(events_param)
+		if @event.save
+			AttendableEvent.new(attended_event: @event, event_attendee: current_user).save
 			flash[:message] = "Event created successfuly"
 			redirect_to users_home_path
 		else
@@ -29,7 +27,6 @@ class EventsController < ApplicationController
 	
 	def subscribe_to_event
 		# byebug
-		#user cannot attend a past event
 		event = Event.find_by(id: params[:id])
 		subscribe_user_to event
 	end

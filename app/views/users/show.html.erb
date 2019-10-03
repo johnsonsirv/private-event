@@ -1,4 +1,8 @@
-
+<% unless flash.empty? %>
+	<div class="alert alert-success">
+			<strong> <%= flash[:message] %> </strong>
+	</div>
+<% end %>
 <h5>My Events</h5>
 <p>
 	<% @attendable_events.each do |e|%>
