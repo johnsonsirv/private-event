@@ -18,4 +18,5 @@ module EventsHelper
 		is_my_event?(event) || past_event?(event)
 	end
 	
+	
 end

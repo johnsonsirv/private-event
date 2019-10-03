@@ -1,7 +1,31 @@
-	<p> <%= @event_details.name %> </p>
-	<p> <%= @event_details.description %> </p>
-	<p> <%= @event_details.location %> </p>
-	<p> <%= @event_details.event_date %> </p>
-	<p>status: <%= @event_details.event_date < Date.today ? "Past" : "Upcoming" %></p>
-	<p>createdby: <%= @event_details.creator.username %> </p>
-	<%= render 'partials/event_subscribe' %>
+<div class="row">
+	<div class="col-md-9">
+		 <%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
+	</div>
+</div>
+<div class="row">
+		<div class="col-md-9">
+			<img src="https://db20n4868sjpl.cloudfront.net/img/event-placeholder.png?v2" class="img-fluid" alt="Event Banner">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title"> <%= @event_details.name.titlecase %> </h5>
+					<p class="card-text"> <%= @event_details.description %> </p>
+					<p>Location:  <%= @event_details.location %> </p>
+					<p>Event Date:  <%= @event_details.event_date %> </p>
+					<p> Event owner: <span class="card-subtitle mb-2 text-muted"> <%= @event_details.creator.fullname %></span>			</p>
+					<p> Status: 
+						<% if @event_details.event_date < Date.today %> 
+							<span class="badge badge-danger"> Past </span> 
+						<% else %> 
+						<span class="badge badge-info"> Upcoming </span>
+						<% end %>
+					</p>
+				</div>
+			</div>
+			<%= render 'partials/event_subscribe' %>
+	</div>
+		<div class="col-md-3">
+			<img src="https://www.ny.gov/sites/all/themes/ny_gov/images/placeholders/placeholder-schedule-map.png" class="img-thumbnail" alt="events banner">
+		</div>
+</div>
+

@@ -5,16 +5,19 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+    <ul class="nav navbar-nav ml-auto">
 			<% if current_user %>
 			<li class="nav-item"> <%= link_to "My Events", users_home_path, class: "nav-link" %>  </li>
-			<li class="nav-item"> <%= link_to "Events", events_path, class: "nav-link" %>  </li>
-			<li class="nav-item"> <%= link_to "Create New Event", new_event_path, class: "nav-link" %>  </li>
+			<li class="nav-item"> <%= link_to "All Events", events_path, class: "nav-link" %>  </li>
+			<li class="nav-item"> <%= link_to "Create Event", new_event_path, class: "nav-link" %>  </li>
 				<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <%= current_user.username %> <%= gravatar_for current_user %>
+         <%= current_user.fullname %> <%= gravatar_for current_user %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					 <%= link_to "#{current_user.username}", users_home_path, class: "dropdown-item" %>
+					 <div class="dropdown-divider"></div>
+					 <%= link_to "Create Event", new_event_path, class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
 					<%= link_to "Logout", logout_path, class: "dropdown-item",  method: :delete %>
         </div>

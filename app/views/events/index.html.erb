@@ -1,12 +1,38 @@
+<div class="row">
+	<div class="col-md-12">
+		<!-- <img src="https://17-fma.cdn.aspedia.net/sites/default/files/uploaded-content/website-content/Events0/eventsbanner2-960x250.jpg" alt="events banner"> -->
+		<!-- <img src="https://www.verteda.com/perch/resources/event-505-banner.jpg" alt="events banner"> -->
+		
+	</div>
+</div>
+
 <% unless flash.empty? %>
 	<div class="alert alert-danger">
 			<strong> <%= flash[:message] %> </strong>
 	</div>
 <% end %>
 <% @events.each do |e| %>
-	<p> <%= e.name %> </p>
-	<p> <%= e.description %> </p>
-	<p> <%= e.location %> </p>
-	<p> <%= e.event_date %> </p>
-	<p>status: <%= e.event_date < Date.today ? "Past" : "Upcoming" %></p>
+	<div class="row">
+			<div class="col-md-7">
+				<img src="https://db20n4868sjpl.cloudfront.net/img/event-placeholder.png?v2" class="img-fluid" alt="Event Banner">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title"><%= link_to "#{e.name.titlecase}", event_path(id: e.id) %></h5>
+						<p class="card-text"><%= e.description %> </p>
+						<p> Location: <%= e.location %> </p>
+						<p> Event Date: <%= e.event_date %> </p>
+						<p> Status: 
+							<% if e.event_date < Date.today %> 
+								<span class="badge badge-danger"> Past </span> 
+							<% else %> 
+							<span class="badge badge-info"> Upcoming </span>
+							<% end %>
+						</p>
+					</div>
+				</div>
+		</div>
+			<div class="col-md-3">
+				<img src="https://www.ny.gov/sites/all/themes/ny_gov/images/placeholders/placeholder-schedule-map.png" class="img-thumbnail" alt="events banner">
+			</div>
+	</div>
 <% end %>

@@ -2,10 +2,10 @@
 		<% if is_attending? @event_details %>
 			<%= button_to "Cancel Attendance", cancel_subscription_path(id: @event_details.id), remote: true, method: :delete,
 				data: { confirm: "I don't wish to attend this event?", "disable-with": 'Canceling attendance...'},
-				class: "btn btn-primary btn-block", title: "Cancel Attendance" %>
+				class: "btn btn-danger btn-block", title: "Cancel Attendance" %>
 		<% else %>
 				<%= button_to "Attend this Event", subscribe_to_event_path(id: @event_details.id), remote: true, 
 				data: { "disable-with": 'Please wait...'},
-				class: "btn btn-primary btn-block", title: "Attend this Event" %>
+				class: "btn btn-success btn-block", title: "Attend this Event" %>
 		<% end %>
 <% end %>
