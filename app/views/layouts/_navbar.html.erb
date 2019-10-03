@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<%= link_to "Private Events", root_path, class: "navbar-brand" %> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+			<% if current_user %>
+			<li class="nav-item"> <%= link_to "My Events", users_home_path, class: "nav-link" %>  </li>
+			<li class="nav-item"> <%= link_to "Events", events_path, class: "nav-link" %>  </li>
+			<li class="nav-item"> <%= link_to "Create New Event", new_event_path, class: "nav-link" %>  </li>
+				<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Logged in as: <%= current_user.username %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-divider"></div>
+					<%= link_to "Logout", logout_path, class: "dropdown-item",  method: :delete %>
+        </div>
+      </li>
+			<% else %>
+				<li class="nav-item"> <%= link_to "Signup", signup_path, class: "nav-link" %>  </li>
+				<li class="nav-item"><%= link_to "Login", login_path, class: "nav-link" %>  </li>
+			<% end %>
+    </ul>
+  </div>
+</nav>

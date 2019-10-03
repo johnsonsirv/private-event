@@ -1,9 +1,5 @@
-<h2>
-	Welcome back, <span><%= current_user.username %></span>
-	<%= link_to "Logout", logout_path, class: "dropdown-item",  method: :delete %>
-</h2>
 
-<h5>Events</h5>
+<h5>My Events</h5>
 <p>
 	<% @attendable_events.each do |e|%>
 		<%= e.name %>
