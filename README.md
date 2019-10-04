@@ -1,7 +1,7 @@
 ## Private Events (ActiveRecord::Associations)
 
 This is a prototype of Eventbrite app. It is an exclusive platform where registered users can view list of events they can attend. They can also create or invite other members to their events.
-It focuses on implementing associations using ```Activerecords```.
+It focuses on implementing associations using ```ActiveRecords```.
 
 This project was completed in line with standards provided by [Microverse](https://www.microverse.org/ "The Global School for Remote Software Developers!").
 
@@ -11,7 +11,7 @@ This project was completed in line with standards provided by [Microverse](https
 * Ruby 2.4.0
 * Rails 5.2.3
 * Bootstrap
-* Cucumber & Capybara (Acceptance tests)
+* Cucumber & Capybara (Integration tests)
 * RSpec-rails (Unit test)
 * FactoryBot (FactoryGirl)
 * SQLite -- ``development``
