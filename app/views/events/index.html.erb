@@ -1,11 +1,3 @@
-<div class="row">
-	<div class="col-md-12">
-		<!-- <img src="https://17-fma.cdn.aspedia.net/sites/default/files/uploaded-content/website-content/Events0/eventsbanner2-960x250.jpg" alt="events banner"> -->
-		<!-- <img src="https://www.verteda.com/perch/resources/event-505-banner.jpg" alt="events banner"> -->
-		
-	</div>
-</div>
-
 <% unless flash.empty? %>
 	<div class="alert alert-danger">
 			<strong> <%= flash[:message] %> </strong>
@@ -14,7 +6,7 @@
 <% @events.each do |e| %>
 	<div class="row">
 			<div class="col-md-7">
-				<img src="https://db20n4868sjpl.cloudfront.net/img/event-placeholder.png?v2" class="img-fluid" alt="Event Banner">
+					<%= image_tag "event-placeholder.png", class: "img-fluid" %>
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title"><%= link_to "#{e.name.titlecase}", event_path(id: e.id) %></h5>
@@ -32,7 +24,8 @@
 				</div>
 		</div>
 			<div class="col-md-3">
-				<img src="https://www.ny.gov/sites/all/themes/ny_gov/images/placeholders/placeholder-schedule-map.png" class="img-thumbnail" alt="events banner">
+				<%= image_tag "map-main-placeholder.jpg", class: "img-thumbnail" %>
 			</div>
 	</div>
+	<div class="event-divider">	</div>
 <% end %>

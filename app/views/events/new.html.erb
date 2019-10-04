@@ -1,34 +1,35 @@
-<h2 class="text-center"> Create New Event </h2>
-
-<% if @event.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
-      The form contains <%= pluralize(@event.errors.count, "error") %>
-    <ul>
-    <% @event.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+<div class="row">
+	<div class="col-0 col-sm-1 col-md-3">	</div>
+	<div class="col-12 col-sm-10 col-md-6">
+	<h2 class="text-center"> Create New Event </h2>
+			<% if @event.errors.any? %>
+					<div class="alert alert-danger">
+						The form contains <%= pluralize(@event.errors.count, "error") %>
+					<ul>
+					<% @event.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+					</ul>	</div>
+			<% end %>
+			<%= form_for(@event) do |f| %>
+					<div class="form-group">
+						<%= f.label :name, "Name" %>
+						<%= f.text_field :name, placeholder: "Event name", class: "form-control"%>
+					</div>
+					<div class="form-group">
+							<%= f.label :description, "Description" %>
+						<%= f.text_area :description, placeholder: "Event description and Time", class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :location, "Location" %>
+						<%= f.text_field :location, placeholder: "Event location", class: "form-control"%>
+					</div>
+					<div class="form-group">
+						<%= f.label :event_date, "Event Date" %>
+						<%= f.date_field :event_date, placeholder: "mm/dd/yyyy", class: "form-control"%>
+					</div>
+						<%= f.submit "Add Event", class: "btn btn-primary btn-lg btn-block", title: "Add Event" %>
+			<% end %>
 		</div>
-  </div>
-<% end %>
-
-<%= form_for(@event) do |f| %>
-		<div class="form-group">
-			<%= f.label :name, "Name" %>
-			<%= f.text_field :name, placeholder: "Event name", class: "form-control"%>
-		</div>
-		<div class="form-group">
-				<%= f.label :description, "Description" %>
-			<%= f.text_area :description, placeholder: "Event description and Time", class: "form-control" %>
-		</div>
-		<div class="form-group">
-			<%= f.label :location, "Location" %>
-			<%= f.text_field :location, placeholder: "Event location", class: "form-control"%>
-		</div>
-		<div class="form-group">
-			<%= f.label :event_date, "Event Date" %>
-			<%= f.date_field :event_date, placeholder: "mm/dd/yyyy", class: "form-control"%>
-		</div>
-			<%= f.submit "Add Event", class: "btn btn-primary btn-lg btn-block", title: "Add Event" %>
-<% end %>
+	<div class="col-0 col-sm-1 col-md-3">	</div>
+</div>

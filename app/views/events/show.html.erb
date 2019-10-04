@@ -1,11 +1,7 @@
-<div class="row">
-	<div class="col-md-9">
-		 <%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
-	</div>
-</div>
+
 <div class="row">
 		<div class="col-md-9">
-			<img src="https://db20n4868sjpl.cloudfront.net/img/event-placeholder.png?v2" class="img-fluid" alt="Event Banner">
+			<%= image_tag "event-placeholder.png", class: "img-fluid" %>
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title"> <%= @event_details.name.titlecase %> </h5>
@@ -25,7 +21,8 @@
 			<%= render 'partials/event_subscribe' %>
 	</div>
 		<div class="col-md-3">
-			<img src="https://www.ny.gov/sites/all/themes/ny_gov/images/placeholders/placeholder-schedule-map.png" class="img-thumbnail" alt="events banner">
-		</div>
+					<%= image_tag "map-main-placeholder.jpg", class: "img-thumbnail" %>
+					 <%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
+			</div>
 </div>
 
