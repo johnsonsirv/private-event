@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
 	delete '/logout', to: 'sessions#destroy'
+	delete '/cancel_subscription', to: 'events#cancel_subscription'
+	post '/subscribe_to_event', to: 'events#subscribe_to_event'
+	get '/users', to: redirect('/')
+
 	
 	resources :users, only: [:new, :create]
+	resources :events, only: [:new, :create, :index, :show]
 end

@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddIndexToUsers	db/migrate/20190915205506_add_index_to_users.rb	/^class AddIndexToUsers < ActiveRecord::Migration[5.2]$/;"	c	line:1
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	line:21	class:PrivateEvent
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m	line:1
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m	line:1
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c	line:1
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m	line:1
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c	line:1
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c	line:1
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c	line:1
+AttendableEvent	app/models/attendable_event.rb	/^class AttendableEvent < ApplicationRecord$/;"	c	line:1
+ChangeEventDateType	db/migrate/20190920125113_change_event_date_type.rb	/^class ChangeEventDateType < ActiveRecord::Migration[5.2]$/;"	c	line:1
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	line:2	class:ApplicationCable
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	line:2	class:ApplicationCable
+CreateAttendedEvents	db/migrate/20190909184420_create_attended_events.rb	/^class CreateAttendedEvents < ActiveRecord::Migration[5.2]$/;"	c	line:1
+CreateEvents	db/migrate/20190909184040_create_events.rb	/^class CreateEvents < ActiveRecord::Migration[5.2]$/;"	c	line:1
+CreateUsers	db/migrate/20190909183422_create_users.rb	/^class CreateUsers < ActiveRecord::Migration[5.2]$/;"	c	line:1
+Event	app/models/event.rb	/^class Event < ApplicationRecord$/;"	c	line:1
+EventsController	app/controllers/events_controller.rb	/^class EventsController < ApplicationController$/;"	c	line:1
+EventsHelper	app/helpers/events_helper.rb	/^module EventsHelper$/;"	m	line:1
+PrivateEvent	config/application.rb	/^module PrivateEvent$/;"	m	line:20
+RenameTableAttendedEvents	db/migrate/20190910114623_rename_table_attended_events.rb	/^class RenameTableAttendedEvents < ActiveRecord::Migration[5.2]$/;"	c	line:1
+SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c	line:1
+SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m	line:1
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c	line:1
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c	line:1
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m	line:1
+change	db/migrate/20190909183422_create_users.rb	/^  def change$/;"	f	line:2	class:CreateUsers
+change	db/migrate/20190909184040_create_events.rb	/^  def change$/;"	f	line:2	class:CreateEvents
+change	db/migrate/20190909184420_create_attended_events.rb	/^  def change$/;"	f	line:2	class:CreateAttendedEvents
+change	db/migrate/20190910114623_rename_table_attended_events.rb	/^  def change$/;"	f	line:2	class:RenameTableAttendedEvents
+change	db/migrate/20190915205506_add_index_to_users.rb	/^  def change$/;"	f	line:2	class:AddIndexToUsers
+change	db/migrate/20190920125113_change_event_date_type.rb	/^  def change$/;"	f	line:2	class:ChangeEventDateType
+create	app/controllers/events_controller.rb	/^	def create$/;"	f	line:10	class:EventsController
+create	app/controllers/sessions_controller.rb	/^	def create$/;"	f	line:7	class:SessionsController
+create	app/controllers/users_controller.rb	/^	def create$/;"	f	line:12	class:UsersController
+current_user	app/helpers/sessions_helper.rb	/^	def current_user$/;"	f	line:8	class:SessionsHelper
+destroy	app/controllers/sessions_controller.rb	/^	def destroy$/;"	f	line:18	class:SessionsController
+downcase_username	app/models/user.rb	/^	def downcase_username$/;"	f	line:18	class:User
+events_param	app/controllers/events_controller.rb	/^	def events_param$/;"	f	line:23	class:EventsController
+index	app/controllers/events_controller.rb	/^	def index$/;"	f	line:2	class:EventsController
+index	app/controllers/users_controller.rb	/^	def index$/;"	f	line:4	class:UsersController
+log_out	app/helpers/sessions_helper.rb	/^	def log_out$/;"	f	line:12	class:SessionsHelper
+new	app/controllers/events_controller.rb	/^	def new$/;"	f	line:6	class:EventsController
+new	app/controllers/sessions_controller.rb	/^	def new$/;"	f	line:3	class:SessionsController
+new	app/controllers/users_controller.rb	/^	def new$/;"	f	line:8	class:UsersController
+require_login	app/controllers/users_controller.rb	/^		def require_login$/;"	f	line:33	class:UsersController
+show	app/controllers/users_controller.rb	/^	def show$/;"	f	line:22	class:UsersController
+sign_in	app/helpers/sessions_helper.rb	/^	def sign_in(user)$/;"	f	line:3	class:SessionsHelper
+system!	bin/setup	/^def system!(*args)$/;"	f	line:8
+system!	bin/update	/^def system!(*args)$/;"	f	line:8
+user_params	app/controllers/users_controller.rb	/^		def user_params$/;"	f	line:29	class:UsersController

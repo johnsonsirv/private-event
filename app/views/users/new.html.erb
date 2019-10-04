@@ -1,16 +1,27 @@
-<% if @user.errors.any? %>
-	<% @user.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-  <% end %>
-<% end %>
-<%= form_for(@user) do |f| %>
-		<div class="form-group">
-			<%= f.label :fullname, "Full Name" %>
-			<%= f.text_field :fullname, placeholder: "Type Firstname, Lastname", class: "form-control"%>
-		</div>
-		<div class="form-group">
-				<%= f.label :username, "Username" %>
-			<%= f.email_field :username, placeholder: "Choose Username", class: "form-control" %>
-		</div>
-			<%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block", title: "Submit" %>
-<% end %>
+<div class="row">
+	<div class="col-0 col-sm-1 col-md-3">	</div>
+	<div class="col-12 col-sm-10 col-md-6">
+		<h2 class="text-center"> Sign Up Free! </h2>
+		<% if @user.errors.any? %>
+		<div class="alert alert-danger"><ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul></div>
+		<% end %>
+		<%= form_for(@user) do |f| %>
+				<div class="form-group">
+					<%= f.label :fullname, "Full Name" %>
+					<%= f.text_field :fullname, placeholder: "Type Firstname, Lastname", class: "form-control"%>
+				</div>
+				<div class="form-group">
+						<%= f.label :username, "Username" %>
+					<%= f.email_field :username, placeholder: "Choose Username", class: "form-control" %>
+				</div>
+					<%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block", title: "Submit" %>
+		<% end %>
+		<p></p>
+			<p>Already have an account? <%= link_to "Login", login_path %></p>
+	</div>
+	<div class="col-0 col-sm-1 col-md-3">	</div>
+</div>

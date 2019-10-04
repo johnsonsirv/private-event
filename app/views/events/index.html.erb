@@ -1,15 +1,12 @@
-
 <% unless flash.empty? %>
-	<div class="alert alert-success">
+	<div class="alert alert-danger">
 			<strong> <%= flash[:message] %> </strong>
 	</div>
 <% end %>
-<h2 class="text-center"> My Events </h2>
-<% @attendable_events.each do |e| %>
+<% @events.each do |e| %>
 	<div class="row">
 			<div class="col-md-7">
-				<!-- <img src="https://db20n4868sjpl.cloudfront.net/img/event-placeholder.png?v2" class="img-fluid" alt="Event Banner"> -->
-				<%= image_tag "event-placeholder.png", class: "img-fluid" %>
+					<%= image_tag "event-placeholder.png", class: "img-fluid" %>
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title"><%= link_to "#{e.name.titlecase}", event_path(id: e.id) %></h5>
@@ -23,13 +20,12 @@
 							<span class="badge badge-info"> Upcoming </span>
 							<% end %>
 						</p>
+					</div>
 				</div>
-			</div>
 		</div>
 			<div class="col-md-3">
-				<!-- <img src="https://www.ncgtp.com/NCGTP_Map_Images/map-main-placeholder.jpg" class="img-thumbnail" alt="events banner"> -->
-					<%= image_tag "map-main-placeholder.jpg", class: "img-thumbnail" %>
-					<%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
+				<%= image_tag "map-main-placeholder.jpg", class: "img-thumbnail" %>
 			</div>
 	</div>
+	<div class="event-divider">	</div>
 <% end %>

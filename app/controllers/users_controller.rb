@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		# @current_user = User.find_by(username: session[:username])
+		@attendable_events = current_user.attended_events
 	end
 	
 	
@@ -30,7 +30,4 @@ class UsersController < ApplicationController
 			params.require(:user).permit(:fullname, :username)
 		end
 	
-		def require_login
-			redirect_to signup_path unless current_user
-		end
 end

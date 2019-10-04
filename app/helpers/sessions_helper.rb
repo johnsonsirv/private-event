@@ -12,5 +12,9 @@ module SessionsHelper
 	def log_out
 		session[:username] = nil
 	end
+			
+	def require_login
+			redirect_to signup_path unless current_user
+	end
 	
 end
