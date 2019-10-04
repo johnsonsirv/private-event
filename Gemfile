@@ -46,6 +46,7 @@ group :development, :test do
 	gem 'autotest', '~> 5.0'
 	gem 'autotest-rails', '~> 4.2', '>= 4.2.1'
 	gem 'factory_bot_rails'
+	gem 'rails-controller-testing'
 end
 
 group :development do
