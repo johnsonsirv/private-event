@@ -18,9 +18,9 @@ end
 
 Then("I should see:") do |table|
 	table.hashes.each do |e|
-		expect(page).to have_content e['name']
-		expect(page).to have_content e['description']
-		expect(page).to have_content e['location']
-		expect(page).to have_content e['creator']
+		expect(page).to have_content /e['name']/i
+		expect(page).to have_content /e['description']/i
+		expect(page).to have_content /e['location']/i
+		expect(page).to have_content /e['creator']/i
 	end
 end

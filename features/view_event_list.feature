@@ -12,5 +12,7 @@ Background:
 	
 Scenario: View list of events
 	When I follow the events path
-	Then I should see "R-o-Rails meetup" and "Upcoming"
-	And also see "Karl's birthday" and "Past"
+	Then I should see events:
+	| name | description | location | event_date |
+	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | "Nov 26 2022" |
+	| "Karl's birthday"  | "1 year birthday party" | "My residence" | "Sep 23 2019" |

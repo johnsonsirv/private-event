@@ -19,5 +19,5 @@ end
 
 
 Then('I should see my event {string}') do |event|
-  expect(page).to have_text event
+  expect(page).to have_content /event/i
 end

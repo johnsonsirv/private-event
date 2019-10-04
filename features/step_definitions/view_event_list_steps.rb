@@ -12,12 +12,11 @@ When("I follow the events path") do
   visit events_path
 end
 
-Then("I should see {string} and {string}") do |event_1, status|
- 	expect(page).to have_content event_1
-		expect(page).to have_content status
-end
-
-Then("also see {string} and {string}") do |event_2, status|
- 	expect(page).to have_content event_2
-	expect(page).to have_content status
+Then("I should see events:") do |table|
+	table.hashes.each do |e|
+		expect(page).to have_content /e['name']/i
+		expect(page).to have_content /e['description']/i
+		expect(page).to have_content /e['location']/i
+		expect(page).to have_content /e['event_date']/i
+	end
 end
