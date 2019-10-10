@@ -5,5 +5,13 @@ class Event < ApplicationRecord
 	has_many :attendees, through: :attendable_events, source: :event_attendee
 	
 	validates :name, :description, :location, :event_date, presence: true
-		
+	validate :event_date_cannot_be_in_the_past 	
+	
+	private
+	def event_date_cannot_be_in_the_past
+		if event_date && event_date < Date.today
+			errors.add(:event_date, "can't be in the past")
+		end
+	end
+	
 end

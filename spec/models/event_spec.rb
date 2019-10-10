@@ -25,6 +25,10 @@ RSpec.describe Event, type: :model do
 			event2 = build(:event, event_date: nil)
 			expect(event2).to_not be_valid
 		end
+		it "is not valid with past event date" do
+			event2 = build(:event, event_date: Date.yesterday)
+			expect(event2).to_not be_valid
+		end
 	end
 	
 end
