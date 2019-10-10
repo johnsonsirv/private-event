@@ -16,3 +16,16 @@ Scenario: View event details
 	Then I should see:
 	| name | description | location | creator |
 	| "R-o-Rails meetup" | "Ruby on rails developer meetup" | "Events Hub Lagos" | dummyuser |
+	
+
+Scenario: Display event attendees
+	Given a list of events
+	And the first event has attendees:
+	| fullname | username |
+	| "Victor Okeugo" | "vokeugo" |
+	| "Donald Trump"	| "dtrump"	|
+	When I view first event details
+	Then I should see list of attendees:
+	| fullname |
+	| Victor Okeugo | 
+	| Donald Trump	|

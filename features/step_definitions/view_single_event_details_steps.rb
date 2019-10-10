@@ -24,3 +24,27 @@ Then("I should see:") do |table|
 		expect(page).to have_content /e['creator']/i
 	end
 end
+
+Given("a list of events") do
+   visit events_path
+end
+
+Given("the first event has attendees:") do |table|
+	event = Event.first
+  table.hashes.each do |u|
+		user = User.create(fullname: u['fullname'], username: u['username'])
+		AttendableEvent.new(
+			attended_event: event,
+			event_attendee: user).save
+	end
+end
+
+When("I view first event details") do
+  visit event_path Event.first
+end
+
+Then("I should see list of attendees:") do |table|
+  table.hashes.each do |attendee|
+		expect(page).to have_content attendee['fullname']
+	end
+end
