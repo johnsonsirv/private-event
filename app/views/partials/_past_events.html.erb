@@ -6,7 +6,8 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title"><%= link_to "#{e.name.titlecase}", event_path(id: e.id) %></h5>
-							<p> <%= fa_icon "map-marker" %> <%= e.location %>  | <%= fa_icon "calendar" %> <%= e.event_date %> </p>
+							<p> <%= fa_icon "map-marker" %> <%= e.location %> </p>
+							<p> <%= fa_icon "calendar" %> <%= e.event_date %> </p>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,10 @@
-<h5 class="text-center"> My Events <span class="badge badge-info">created</span> </h5>
+<h5 class="text-center"> My Events | <span class="badge badge-info">created</span> </h5>
+<% if @created_events.empty? %>
+	<%= content_tag :div, class: "card-body" do -%>
+			<%= content_tag(:p, "What event is on your mind?", class: "card-title") %>
+			<%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
+	<% end -%>
+<% end %>
 <% @created_events.each do |e| %>
 	<div class="row my-event">
 			<div class="col-md-12">
@@ -19,7 +25,7 @@
 				</div>
 				<%= image_tag "map-main-placeholder.jpg", class: "img-fluid" %>
 			</div>
-			
+
 		</div>
 			<!-- <div class="col-md-4">
 				<img src="https://www.ncgtp.com/NCGTP_Map_Images/map-main-placeholder.jpg" class="img-thumbnail" alt="events banner">
