@@ -5,16 +5,15 @@
 				<div class="card-body">
 					<h5 class="card-title"> <%= @event_details.name.titlecase %> </h5>
 					<p class="card-text"> <%= @event_details.description %> </p>
-					<p>Location:  <%= @event_details.location %> </p>
-					<p>Event Date:  <%= @event_details.event_date %> </p>
-					<p> Event owner: <span class="card-subtitle mb-2 text-muted"> <%= @event_details.creator.fullname %></span>			</p>
-					<p> Status: 
-						<% if @event_details.event_date < Date.today %> 
-							<span class="badge badge-danger"> Past </span> 
-						<% else %> 
-						<span class="badge badge-info"> Upcoming </span>
-						<% end %>
+					<p><%= fa_icon "map-marker" %>  <%= @event_details.location %> </p>
+					<p> <%= fa_icon "calendar" %>  <%= @event_details.event_date %> | 
+							<% if @event_details.event_date < Date.today %> 
+								<span class="badge badge-danger"> Past </span> 
+							<% else %> 
+							<span class="badge badge-info"> Upcoming </span>
+							<% end %>
 					</p>
+					<p> <%= fa_icon "user", text: "Event Owner" %> <span class="card-subtitle mb-2 text-muted"> <%= @event_details.creator.fullname %></span>			</p>
 				</div>
 			</div>
 			<%= render 'partials/event_subscribe' %>

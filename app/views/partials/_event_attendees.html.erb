@@ -1,7 +1,7 @@
 <div id="attendees">
 	<div class="card">
 			<div class="card-body">
-					<h5 class="card-title"> Also attending this event </h5>
+					<h5 class="card-title"> <%= fa_icon "users", text: "Also Attending" %> </h5>
 					<% @event_details.attendees.each do |attendee| %>
 						<%= content_tag :span, class: "badge badge-info" do -%>
 							<%= attendee.fullname.titlecase %>

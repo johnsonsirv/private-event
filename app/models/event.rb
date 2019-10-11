@@ -7,6 +7,11 @@ class Event < ApplicationRecord
 	validates :name, :description, :location, :event_date, presence: true
 	validate :event_date_cannot_be_in_the_past 	
 	
+	
+	scope :upcoming, -> {where("event_date > ?", Date.today )}
+	scope :past, -> {where("event_date < ?", Date.today )}
+	
+	
 	private
 	def event_date_cannot_be_in_the_past
 		if event_date && event_date < Date.today
