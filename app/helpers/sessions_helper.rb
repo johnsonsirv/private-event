@@ -13,8 +13,4 @@ module SessionsHelper
 		session[:username] = nil
 	end
 			
-	def require_login
-			redirect_to signup_path unless current_user
-	end
-	
 end
