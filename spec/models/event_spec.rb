@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  before do
-    @event = create(:event)
-  end
-	
+  
 	context "validations" do
+		before do
+    	@event = create(:event)
+  	end
 		it "is valid with valid attributes" do
 			expect(@event).to be_valid
 		end
@@ -30,5 +30,18 @@ RSpec.describe Event, type: :model do
 			expect(event2).to_not be_valid
 		end
 	end
+	
+	context "Associations" do
+		it { should belong_to(:creator).class_name('User') }
+		
+		it { should have_many(:attendable_events).
+				dependent(:destroy).
+				with_foreign_key('attended_event_id') }
+		
+		it { should have_many(:attendees).
+				through(:attendable_events).
+				source(:event_attendee) }
+	end
+	
 	
 end
