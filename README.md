@@ -17,6 +17,9 @@ This project was completed in line with standards provided by [Microverse](https
 * SQLite -- ``development``
 * PgSQL -- ``production``
 
+##### Clone Repository
+
+```git clone https://github.com/johnsonsirv/private-event.git```
 
 ###### Database initialization
 in your terminal ```rake db:migrate db:test:prepare```

@@ -20,7 +20,9 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		@attendable_events = current_user.attended_events
+		@created_events = current_user.created_events
+		@upcoming_events = current_user.attended_events.upcoming
+		@past_events = current_user.attended_events.past
 	end
 	
 	
@@ -29,5 +31,4 @@ class UsersController < ApplicationController
 		def user_params
 			params.require(:user).permit(:fullname, :username)
 		end
-	
 end

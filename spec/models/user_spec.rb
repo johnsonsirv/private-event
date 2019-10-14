@@ -21,4 +21,15 @@ RSpec.describe User, type: :model do
 				with_message(/Username too short or long, 3 - 16 chars/)}
 	end
 	
+	context "Associations" do
+		it { should have_many(:created_events).class_name('Event') }
+		
+		it { should have_many(:attendable_events).
+				dependent(:destroy).
+				with_foreign_key('event_attendee_id') }
+		
+		it { should have_many(:attended_events).
+				through(:attendable_events) }
+	end
+	
 end

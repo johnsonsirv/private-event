@@ -14,9 +14,6 @@ class User < ApplicationRecord
 											uniqueness: true
 	
 	
-	def is_already_attending?(event)
-	end
-	
 	private
 	def downcase_username
 		self.username = username.downcase
