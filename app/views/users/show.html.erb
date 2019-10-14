@@ -1,0 +1,27 @@
+<% unless flash.empty? %>
+	<div class="alert alert-success">
+			<strong> <%= flash[:message] %> </strong>
+	</div>
+<% end %>
+
+
+<div class="row">
+	<div class="col-md-5">
+		<div id="created-events">
+				<%= render 'partials/created_events' %>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div id="upcoming-events">
+				<%= render 'partials/upcoming_events' %>
+		</div>
+	</div>
+	
+	<div class="col-md-3">
+		<div id="past-events">
+				<%= render 'partials/past_events' %>
+		</div>
+	</div>
+	
+</div>
+

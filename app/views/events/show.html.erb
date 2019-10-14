@@ -1,0 +1,27 @@
+<div class="row">
+		<div class="col-md-9">
+			<%= image_tag "event-placeholder.png", class: "img-fluid" %>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title"> <%= @event_details.name.titlecase %> </h5>
+					<p class="card-text"> <%= @event_details.description %> </p>
+					<p><%= fa_icon "map-marker" %>  <%= @event_details.location %> </p>
+					<p> <%= fa_icon "calendar" %>  <%= @event_details.event_date %> | 
+							<% if @event_details.event_date < Date.today %> 
+								<span class="badge badge-danger"> Past </span> 
+							<% else %> 
+							<span class="badge badge-info"> Upcoming </span>
+							<% end %>
+					</p>
+					<p> <%= fa_icon "user", text: "Event Owner" %> <span class="card-subtitle mb-2 text-muted"> <%= @event_details.creator.fullname %></span>			</p>
+				</div>
+			</div>
+			<%= render 'partials/event_subscribe' %>
+	</div>
+		<div class="col-md-3">
+					<%= image_tag "map-main-placeholder.jpg", class: "img-thumbnail" %>
+					<%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
+					<%= render 'partials/event_attendees' %>
+		</div>
+</div>
+
