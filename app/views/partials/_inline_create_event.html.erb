@@ -1,0 +1,6 @@
+<% if @created_events.empty? %>
+	<%= content_tag :div, class: "card-body" do -%>
+			<%= content_tag(:p, "What event is on your mind?", class: "card-title") %>
+			<%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
+	<% end -%>
+<% end %>
