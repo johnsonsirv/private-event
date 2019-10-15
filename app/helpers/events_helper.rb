@@ -18,5 +18,17 @@ module EventsHelper
 		is_my_event?(event) || past_event?(event)
 	end
 	
+	def event_status_of(event)
+		return past_event_status if past_event? event
+		upcoming_event_status
+	end
+	
+	def past_event_status
+		'<span class="badge badge-danger"> Past </span>'.html_safe
+	end
+	
+	def upcoming_event_status
+		'<span class="badge badge-info"> Upcoming </span>'.html_safe
+	end
 	
 end

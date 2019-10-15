@@ -1,34 +1,3 @@
 <h5 class="text-center"> My Events | <span class="badge badge-info">created</span> </h5>
-<% if @created_events.empty? %>
-	<%= content_tag :div, class: "card-body" do -%>
-			<%= content_tag(:p, "What event is on your mind?", class: "card-title") %>
-			<%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-block" %>
-	<% end -%>
-<% end %>
-<% @created_events.each do |e| %>
-	<div class="row my-event">
-			<div class="col-md-12">
-				<!-- <img src="https://db20n4868sjpl.cloudfront.net/img/event-placeholder.png?v2" class="img-fluid" alt="Event Banner"> -->
-				<%= image_tag "event-placeholder.png", class: "img-fluid" %>
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title"><%= link_to "#{e.name.titlecase}", event_path(id: e.id) %></h5>
-						<p class="card-text"><%= e.description %> </p>
-						<p> <%= fa_icon "map-marker" %> <%= e.location %> </p>
-						<p> <%= fa_icon "calendar" %> <%= e.event_date %> | 
-								<% if e.event_date < Date.today %> 
-									<span class="badge badge-danger"> Past </span> 
-								<% else %> 
-								<span class="badge badge-info"> Upcoming </span>
-								<% end %>
-						</p>
-				</div>
-				<%= image_tag "map-main-placeholder.jpg", class: "img-fluid" %>
-			</div>
-
-		</div>
-			<!-- <div class="col-md-4">
-				<img src="https://www.ncgtp.com/NCGTP_Map_Images/map-main-placeholder.jpg" class="img-thumbnail" alt="events banner">
-				</div> -->
-	</div>
-<% end %>
+<%= render 'partials/inline_create_event' %>
+<%= render @created_events %>
