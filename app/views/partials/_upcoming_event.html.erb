@@ -1,0 +1,13 @@
+<div class="row my-event">
+			<div class="col-md-12">
+				<%= image_tag "event-placeholder.png", class: "img-fluid" %>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title"><%= link_to "#{upcoming_event.name.titlecase}", event_path(id: upcoming_event.id) %></h5>
+						<p> <%= fa_icon "map-marker" %> <%= upcoming_event.location %>  |
+						<p> <%= fa_icon "calendar" %> <%= upcoming_event.event_date %> |
+						<%= event_status_of upcoming_event %> </p>
+				</div>
+			</div>
+		</div>
+</div>

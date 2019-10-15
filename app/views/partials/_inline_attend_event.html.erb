@@ -1,0 +1,6 @@
+<% if @upcoming_events.empty? %>
+	<%= content_tag :div, class: "card-body" do -%>
+			<%= content_tag(:p, "See events happening around you!", class: "card-title") %>
+			<%= link_to "All Events", events_path, class: "btn btn-primary btn-block" %>
+	<% end -%>
+<% end %>
